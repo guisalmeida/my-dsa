@@ -15,5 +15,4 @@ describe('findFirstRecurrent2', () => {
     const arr = [2, 3, 4, 5];
     expect(findFirstRecurrent2(arr)).toBe(undefined);
   });
-
 })
