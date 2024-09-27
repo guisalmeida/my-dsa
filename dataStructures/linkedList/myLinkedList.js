@@ -98,6 +98,7 @@ class LinkedList {
     this.length--;
   }
 
+  // Todo reverse
   reverse() {
     // let temp;
 
@@ -143,9 +144,6 @@ class LinkedList {
     this.head = temp;
   }
 
-
-
-
   printList() {
     const array = []
     let currentNode = this.head;
@@ -159,11 +157,13 @@ class LinkedList {
   }
 }
 
-let myLinkedList = new LinkedList(10);
+module.exports = LinkedList;
 
-myLinkedList.append(5);
-myLinkedList.append(16);
-myLinkedList.append(22);
+// let myLinkedList = new LinkedList(10);
+
+// myLinkedList.append(5);
+// myLinkedList.append(16);
+// myLinkedList.append(22);
 // myLinkedList.prepend(1);
 // myLinkedList.prepend(33);
 // myLinkedList.insert(1, 100);
@@ -173,10 +173,7 @@ myLinkedList.append(22);
 // myLinkedList.remove(1);
 // myLinkedList.remove(8);
 
-console.log(myLinkedList.printList());
-myLinkedList.reverse();
-console.log(myLinkedList.printList());
-
+// console.log(myLinkedList.printList());
+// myLinkedList.reverse();
+// console.log(myLinkedList.printList());
 // console.log(myLinkedList);
-
-module.exports = LinkedList;
