@@ -30,4 +30,24 @@ describe('MyLinkedList', () => {
       expect(myLinkedList.length).toBe(2);
     });
   });
+
+  describe('Remove method', () => {
+    it('Should remove second item in the list', () => {
+      myLinkedList.append(2)
+      myLinkedList.append(3)
+      myLinkedList.append(4)
+      myLinkedList.remove(1)
+      expect(myLinkedList.printList()).toStrictEqual([1,3,4]);
+    });
+  });
+
+  describe('Reverse method', () => {
+    it('Should reverse the list', () => {
+      myLinkedList.append(2)
+      myLinkedList.append(3)
+      myLinkedList.append(4)
+      myLinkedList.reverse()
+      expect(myLinkedList.printList()).toStrictEqual([4,3,2,1]);
+    });
+  });
 })
