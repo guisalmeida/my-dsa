@@ -98,50 +98,26 @@ class LinkedList {
     this.length--;
   }
 
-  // Todo reverse
   reverse() {
-    // let temp;
-
-    // for (let index = 0; index < this.length; index++) {
-    //   let currentNode = {...this.head};
-    //   let counter = this.length;
-
-    //   while (counter > index + 1) {
-    //     currentNode = currentNode.next;
-    //     counter--;
-    //   }
-    //   console.log(currentNode.value);
-
-    //   if (!temp) {
-    //     temp = {...currentNode};
-    //     continue
-    //   }
-    //   temp.next = {...currentNode};
-    //   temp = temp.next;
-    // }
-
-    // this.head = temp;
-
-    let temp = { ...this.tail };
-    let currentNode = { ...this.head };
-
-    while (currentNode !== null) {
-
-
-
-      let pivot = { ...currentNode }
-
-
-      
-      temp = temp.next;
-
-
-
-
-      currentNode = currentNode.next;
+    if (this.length <= 1) {
+      return
     }
 
-    this.head = temp;
+    let first = this.head;
+    this.tail = this.head;
+
+    let second = first.next;
+
+    while (second) {
+      let temp = second.next;
+
+      second.next = first;
+      first = second;
+      second = temp;
+    }
+
+    this.head.next = null;
+    this.head = first;
   }
 
   printList() {
@@ -159,21 +135,3 @@ class LinkedList {
 
 module.exports = LinkedList;
 
-// let myLinkedList = new LinkedList(10);
-
-// myLinkedList.append(5);
-// myLinkedList.append(16);
-// myLinkedList.append(22);
-// myLinkedList.prepend(1);
-// myLinkedList.prepend(33);
-// myLinkedList.insert(1, 100);
-// myLinkedList.insert(5, 222);
-// myLinkedList.insert(0, 8);
-// myLinkedList.insert(0, 7);
-// myLinkedList.remove(1);
-// myLinkedList.remove(8);
-
-// console.log(myLinkedList.printList());
-// myLinkedList.reverse();
-// console.log(myLinkedList.printList());
-// console.log(myLinkedList);
